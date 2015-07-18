@@ -1,0 +1,25 @@
+<% include header %>
+
+<div class="vertical-center">
+    <div class="container">
+        <form action="/client" method="post">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <label for="media_id">Type Youtube media ID</label>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <input type="text" name="media_id" id="media_id" />
+                    <button type="submit" name="">Add to queue</button>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<% include footer %>
