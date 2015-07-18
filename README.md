@@ -2,18 +2,8 @@
 Remote ordering Youtube media into queue
 
 ## Installation
-* Run in project directory
-```ssh
-$ npm install ```
-it happens that all nedded modules will be installed in node_modules directory
-* Start NodeJS server by
-```ssh
-npm start
-```
-or (for development)
-```ssh
-$ nodemon
-```
+* Run in project directory `npm install`, it happens that all nedded modules will be installed in node_modules directory
+* Start NodeJS server by `npm start` or (for development) `nodemon`
 
 ## Getting started
 * Open url `localhost:3000` - media stream, it will show media streams (two example videos is added in playlist)
