@@ -67,14 +67,22 @@ var server = http.createServer(app);
 var io = require('socket.io')(server);
 
 io.on('connection', function(client) {
-  console.log('Connected');
+  console.log('Client connected to media_server');
 
-  io.on('event', function(event) {
+  client.on('event', function(event) {
       console.log(event);
+      if(event.state !== undefined) {
+          switch(event.state) {
+              case 'incoming_media':
+                  console.log('incoming_media: ' + event.media_id);
+                  client.broadcast.emit('event', { state: 'incoming_media', media_id: event.media_id });
+                  break;
+          }
+      }
   });
 
-  client.emit('event', { state: 'incoming_media', media_id: 'cxGYHnTRMAw' });
-  client.emit('event', { state: 'incoming_media', media_id: 'mQOmDUnt8Hs' });
+  //client.emit('event', { state: 'incoming_media', media_id: 'cxGYHnTRMAw' });
+  //client.emit('event', { state: 'incoming_media', media_id: 'mQOmDUnt8Hs' });
 
 });
 
