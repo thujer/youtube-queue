@@ -1,0 +1,27 @@
+2015/07/21 18:14:39 [5693] building file list
+2015/07/21 18:14:39 [5693] done
+2015/07/21 18:14:41 [5693] sent 75,453 bytes  received 11 bytes  21,561.14 bytes/sec
+2015/07/21 18:14:41 [5693] total size is 23,471,652  speedup is 311.03
+2015/07/21 18:20:48 [6217] building file list
+2015/07/21 18:20:48 [6217] done
+2015/07/21 18:20:50 [6217] <fcsT...... public/javascripts/client_source.js
+2015/07/21 18:20:50 [6217] <fcsT...... views/index.ejs
+2015/07/21 18:20:50 [6217] sent 76,947 bytes  received 117 bytes  22,018.29 bytes/sec
+2015/07/21 18:20:50 [6217] total size is 23,471,622  speedup is 304.57
+2015/07/21 18:23:22 [6393] building file list
+2015/07/21 18:23:22 [6393] done
+2015/07/21 18:23:24 [6393] <fcsT...... public/javascripts/client_source.js
+2015/07/21 18:23:24 [6393] <fcsT...... views/index.ejs
+2015/07/21 18:23:24 [6393] sent 77,083 bytes  received 117 bytes  22,057.14 bytes/sec
+2015/07/21 18:23:24 [6393] total size is 23,471,728  speedup is 304.04
+2015/07/21 18:40:03 [7389] building file list
+2015/07/21 18:40:03 [7389] done
+2015/07/21 18:40:05 [7389] <fcsT...... public/javascripts/client_source.js
+2015/07/21 18:40:05 [7389] sent 77,016 bytes  received 56 bytes  22,020.57 bytes/sec
+2015/07/21 18:40:05 [7389] total size is 23,471,838  speedup is 304.54
+2015/07/21 19:39:41 [13313] building file list
+2015/07/21 19:39:41 [13313] done
+2015/07/21 19:39:43 [13313] <fcsT...... public/javascripts/client_source.js
+2015/07/21 19:39:43 [13313] <fcsT...... views/client.ejs
+2015/07/21 19:39:43 [13313] sent 79,052 bytes  received 93 bytes  22,612.86 bytes/sec
+2015/07/21 19:39:43 [13313] total size is 23,472,197  speedup is 296.57

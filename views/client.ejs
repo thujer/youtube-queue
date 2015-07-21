@@ -24,6 +24,8 @@
                 <div class="col-md-2 col-sm-2 col-xs-1"></div>
             </div>
         </form>
+        <div class="search-info-container text-center" id="search-info-container">
+        </div>
         <div class="search-container" id="search-container">
         </div>
     </div>
@@ -31,7 +33,6 @@
 
 <script type="text/html" id="tplresult">
     <div class="item pull-right text-center">
-        <!--<h2>{{title}}</h2>-->
         <iframe class="video w100" width="320" height="180" src="//www.youtube.com/embed/{{videoId}}" frameborder="0" allowfullscreen></iframe>
         <br />
         <button id="btn_add_to_queue" data-id="{{videoId}}">Add to queue</button>

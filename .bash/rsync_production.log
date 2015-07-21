@@ -2,3 +2,23 @@
 2015/07/21 17:57:02 [4761] done
 2015/07/21 17:57:04 [4761] sent 75,453 bytes  received 11 bytes  16,769.78 bytes/sec
 2015/07/21 17:57:04 [4761] total size is 23,471,652  speedup is 311.03 (DRY RUN)
+2015/07/21 18:14:32 [5688] building file list
+2015/07/21 18:14:33 [5688] done
+2015/07/21 18:14:35 [5688] sent 75,453 bytes  received 11 bytes  21,561.14 bytes/sec
+2015/07/21 18:14:35 [5688] total size is 23,471,652  speedup is 311.03 (DRY RUN)
+2015/07/21 18:20:41 [6210] building file list
+2015/07/21 18:20:42 [6210] done
+2015/07/21 18:20:44 [6210] sent 75,461 bytes  received 19 bytes  21,565.71 bytes/sec
+2015/07/21 18:20:44 [6210] total size is 23,471,622  speedup is 310.96 (DRY RUN)
+2015/07/21 18:23:17 [6388] building file list
+2015/07/21 18:23:18 [6388] done
+2015/07/21 18:23:20 [6388] sent 75,461 bytes  received 19 bytes  16,773.33 bytes/sec
+2015/07/21 18:23:20 [6388] total size is 23,471,728  speedup is 310.97 (DRY RUN)
+2015/07/21 18:39:58 [7329] building file list
+2015/07/21 18:39:59 [7329] done
+2015/07/21 18:40:01 [7329] sent 75,458 bytes  received 16 bytes  16,772.00 bytes/sec
+2015/07/21 18:40:01 [7329] total size is 23,471,838  speedup is 310.99 (DRY RUN)
+2015/07/21 19:39:35 [13307] building file list
+2015/07/21 19:39:36 [13307] done
+2015/07/21 19:39:38 [13307] sent 75,457 bytes  received 19 bytes  21,564.57 bytes/sec
+2015/07/21 19:39:38 [13307] total size is 23,472,197  speedup is 310.99 (DRY RUN)

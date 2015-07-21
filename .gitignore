@@ -1,4 +1,6 @@
 .idea
 .backup
+.bash/rsync.diff
+.bash/rsync_production.log
 node_modules
 npm-debug.log

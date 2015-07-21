@@ -1,4 +1,6 @@
 building file list ... done
+public/javascripts/client_source.js
+views/client.ejs
 
-sent 75,453 bytes  received 11 bytes  16,769.78 bytes/sec
-total size is 23,471,652  speedup is 311.03 (DRY RUN)
+sent 75,457 bytes  received 19 bytes  21,564.57 bytes/sec
+total size is 23,472,197  speedup is 310.99 (DRY RUN)

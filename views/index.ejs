@@ -24,7 +24,8 @@
      * Init & connect websockets
      */
     //var socket = io.connect('http://sod.spsy.eu:3000');
-    var socket = io.connect('http://localhost:3000');
+    console.debug(window.location.host);
+    var socket = io.connect(window.location.host);
     socket.on('event', function(event) {
         console.log(event);
         switch(event.state) {
