@@ -9,9 +9,5 @@
 * Open url `localhost:3000/client` - simple client's interface - by this form can be added media into playlist
 After open media stream starts two example Youtube videos, then You can put next videos into the order by put media ID in form at client interface
 
-License
-----
-MIT
-
 ## Author
 Tomas Hujer (c) 2015
