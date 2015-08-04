@@ -1,168 +1,28 @@
 <% include header %>
 
-<div id="player"></div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v2.4&appId=256332064399828";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="wrapper">
+    <img class="logo" src="images/zizkostel_800.jpg" />
+
+    <h1>Těšíme se na Vás</h1>
+
+    <div class="fb-page" data-href="https://www.facebook.com/MedunkaKomunitniZahradkaZizkov" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/MedunkaKomunitniZahradkaZizkov"><a href="https://www.facebook.com/MedunkaKomunitniZahradkaZizkov">Meduňka Komunitní Zahrádka Źizkov</a></blockquote></div></div>
+
+    <div class="fb-page" data-href="https://www.facebook.com/zizkostel" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/zizkostel"><a href="https://www.facebook.com/zizkostel">Komunitní Žižkostel</a></blockquote></div></div>
+
+    <div class="fb-page" data-href="https://www.facebook.com/pages/Komunitn%C3%AD-centrum-na-%C5%BDi%C5%BEkov%C4%9B/158972964129262" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/pages/Komunitn%C3%AD-centrum-na-%C5%BDi%C5%BEkov%C4%9B/158972964129262?fref=ts"><a href="https://www.facebook.com/pages/Komunitn%C3%AD-centrum-na-%C5%BDi%C5%BEkov%C4%9B/158972964129262?fref=ts">Komunitní centrum na Žižkově</a></blockquote></div></div>
+</div>
 
 <script>
 
-    // Load the IFrame Player API code asynchronously.
-
-    var tag = document.createElement('script');
-
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    // Media player object
-    var player;
-
-    // VideoID array
-    var mediaQueue = [];
-
-    var tmCheckVideo = null;
-
-    /**
-     * Init & connect websockets
-     */
-    //var socket = io.connect('http://sod.spsy.eu:3000');
-    console.debug(window.location.host);
-    var socket = io.connect(window.location.host);
-    socket.on('event', function(event) {
-        console.log(event);
-        switch(event.state) {
-            case 'incoming_media':
-                console.log('Incoming_media');
-                mediaQueue.push(event.media_id);
-                break;
-        }
-    });
-
-    /**
-     * Return next video ID
-     */
-    function getNextVideo() {
-        if(mediaQueue.length > 0) {
-            var mediaID = mediaQueue[0];
-            mediaQueue.shift();
-            return mediaID;
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * Player ready event
-     */
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-            height: '100%',
-            width: '100%',
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange,
-                'onError': onError
-            }
-        });
-    }
-
-    /**
-     * The API will call this function when the video player is ready.
-     */
-    function onPlayerReady(event) {
-        console.log('PlayerReady');
-        checkNextVideo();
-    }
-
-    /**
-     * The API calls this function when the player's state changes.
-     * The function indicates that when playing a video (state=1),
-     * the player should play for six seconds and then stop.
-     */
-    function onPlayerStateChange(event) {
-
-        switch(event.data) {
-
-            case YT.PlayerState.PLAYING:
-                //setTimeout(nextVideo, 3000); // debug
-                break;
-
-            case YT.PlayerState.ENDED:
-                player.stopVideo();
-                player.clearVideo();
-                player.seekTo(0);
-                checkNextVideo();
-                break;
-
-            case YT.PlayerState.PAUSED:
-            case YT.PlayerState.BUFFERING:
-            case YT.PlayerState.CUED:
-                break;
-
-            case -1:
-                break;
-        }
-    }
-
-
-    /**
-     * Some error event on loading media
-     */
-    function onError() {
-        checkNextVideo();
-    }
-
-    /**
-     * Periodically test if some video is in Queue
-     */
-    function checkNextVideo() {
-
-        console.log('CheckVideo');
-
-        if(tmCheckVideo) {
-            clearTimeout(tmCheckVideo);
-            tmCheckVideo = null;
-        }
-
-        switch(player.getPlayerState()) {
-            case YT.PlayerState.PLAYING:
-            case YT.PlayerState.PAUSED:
-            case YT.PlayerState.BUFFERING:
-                console.log('CheckVideo: waiting for video finish ' + player.getPlayerState());
-                tmCheckVideo = setTimeout(function() {
-                    checkNextVideo();
-                }, 3000);
-                break;
-
-            case YT.PlayerState.ENDED:
-            case YT.PlayerState.CUED:
-            case YT.PlayerState.UNSTARTED:
-                console.log('CheckVideo: getNextVideo');
-                var videoID = getNextVideo();
-                console.log('CheckNextVideo: ' + videoID);
-                if (videoID !== false) {
-                    player.loadVideoById(videoID, 5, "large");
-                } else {
-                    tmCheckVideo = setTimeout(function() {
-                        checkNextVideo();
-                    }, 3000);
-                }
-                break;
-
-        }
-    }
-
-    /**
-     * Stop and play next video
-     */
-    function nextVideo() {
-        var videoID = getNextVideo();
-        if(videoID !== false) {
-            player.loadVideoById(videoID, 5, "large");
-        } else {
-            player.stopVideo();
-            player.clearVideo();
-            player.seekTo(0);
-        }
-    }
 
 </script>
 

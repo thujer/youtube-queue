@@ -5,35 +5,25 @@ html, body {
 
 body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background-color: black;
-    color: orange;
+    /*background-color: black;
+    color: orange;*/
 }
 
-a {
-    color: yellow;
+.wrapper {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    -webkit-box-shadow: 0px 0px 22px 1px rgba(0,0,0,0.46);
+    -moz-box-shadow: 0px 0px 22px 1px rgba(0,0,0,0.46);
+    box-shadow: 0px 0px 22px 1px rgba(0,0,0,0.46);
 }
 
-.vertical-center {
-    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-    min-height: 100vh; /* These two lines are counted as one :-)       */
-
-    display: flex;
-    align-items: center;
+.fb_iframe_widget {
+    margin: 10px;
 }
-
-input[type="text"] {
-    border-radius: 5px;
-    width: 100%;
-    margin-bottom: 5px;
-}
-
-button {
-    color: orange;
-    border-radius: 5px;
-    background-color: darkslategray;
-    border-width: 1px;
-    border-style: outset;
-    border-color: grey;
-    margin-bottom: 3px;
-}
-

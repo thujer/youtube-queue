@@ -1,7 +1,7 @@
 /**
  * ------------------------------------------------
- *               Youtube media Queue
- *     Youtube media remote ordering into queue
+ *           Žižkostel - komunitní centrum
+ *                Webová prezentace
  * ------------------------------------------------
  * Author: Tomas Hujer (c) 2015
  */
@@ -13,7 +13,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var http = require('http');
 
-var port = 3000;
+var port = 3002;
 
 var app = express();
 app.set('port', port);
@@ -67,9 +67,10 @@ var server = http.createServer(app);
 var io = require('socket.io')(server);
 
 io.on('connection', function(client) {
-  console.log('Client connected to media_server');
+    /*
+    console.log('Client connected to media_server');
 
-  client.on('event', function(event) {
+    client.on('event', function(event) {
       console.log(event);
       if(event.state !== undefined) {
           switch(event.state) {
@@ -79,10 +80,11 @@ io.on('connection', function(client) {
                   break;
           }
       }
-  });
+    });
+    */
 
-  //client.emit('event', { state: 'incoming_media', media_id: 'cxGYHnTRMAw' });
-  //client.emit('event', { state: 'incoming_media', media_id: 'mQOmDUnt8Hs' });
+    //client.emit('event', { state: 'incoming_media', media_id: 'cxGYHnTRMAw' });
+    //client.emit('event', { state: 'incoming_media', media_id: 'mQOmDUnt8Hs' });
 
 });
 
@@ -91,7 +93,7 @@ io.on('connection', function(client) {
  */
 routes.post('/client', function(req, res) {
     io.emit('event', { state: 'incoming_media', media_id: req.body.media_id });
-    res.render('client', { title: 'Youtube Queue - client page'});
+    res.render('client', { title: 'Žižkostel'});
 });
 
 module.exports = app;

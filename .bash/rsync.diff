@@ -1,6 +1,32 @@
 building file list ... done
-public/javascripts/client_source.js
-views/client.ejs
+public/android-icon-144x144.png
+public/android-icon-192x192.png
+public/android-icon-36x36.png
+public/android-icon-48x48.png
+public/android-icon-72x72.png
+public/android-icon-96x96.png
+public/apple-icon-114x114.png
+public/apple-icon-120x120.png
+public/apple-icon-144x144.png
+public/apple-icon-152x152.png
+public/apple-icon-180x180.png
+public/apple-icon-57x57.png
+public/apple-icon-60x60.png
+public/apple-icon-72x72.png
+public/apple-icon-76x76.png
+public/apple-icon-precomposed.png
+public/apple-icon.png
+public/browserconfig.xml
+public/favicon-16x16.png
+public/favicon-32x32.png
+public/favicon-96x96.png
+public/favicon.ico
+public/manifest.json
+public/ms-icon-144x144.png
+public/ms-icon-150x150.png
+public/ms-icon-310x310.png
+public/ms-icon-70x70.png
+views/header.ejs
 
-sent 75,457 bytes  received 19 bytes  21,564.57 bytes/sec
-total size is 23,472,197  speedup is 310.99 (DRY RUN)
+sent 77,734 bytes  received 97 bytes  22,237.43 bytes/sec
+total size is 26,590,961  speedup is 341.65 (DRY RUN)

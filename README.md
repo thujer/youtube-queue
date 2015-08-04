@@ -1,5 +1,4 @@
-# Youtube media Queue
-Remote ordering Youtube media into queue
+# Zizkostel website
 
 ## Installation
 * Run in project directory `npm install`, it happens that all nedded modules will be installed in node_modules directory

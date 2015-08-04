@@ -8,6 +8,21 @@ var debug = require('debug');
 
 var server = app.server;
 
+/*
+ var http = require('http'),
+ httpProxy = require('http-proxy'),
+ proxyServer = httpProxy.createServer ({
+ hostnameOnly: true,
+     router: {
+     'domain.com':       '127.0.0.1:81',
+     'domain.co.uk':     '127.0.0.1:82',
+     '127.0.0.1':        '127.0.0.1:83'
+     }
+ });
+
+ proxyServer.listen(80);
+ */
+
 /**
  * Listen on provided port, on all network interfaces.
  */

@@ -1,42 +1,4 @@
 <% include header %>
 
-<script src="/javascripts/auth.js"></script>
-<!--<script src="/javascripts/client.js?onload=init"></script>-->
-<script src="https://apis.google.com/js/client.js"></script>
-<script type="text/javascript" src="/javascripts/client_source.js" ></script>
-
-<div class="vertical-center">
-    <div class="container">
-        <form action="/client" method="post">
-            <div class="row">
-                <div class="col-md-2 col-sm-2 col-xs-1"></div>
-                <div class="col-md-8 col-sm-2 col-xs-10">
-                    <label for="media_id">Type Youtube media ID</label>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-1"></div>
-            </div>
-            <div class="row">
-                <div class="col-md-2 col-sm-2 col-xs-1"></div>
-                <div class="col-md-8 col-sm-2 col-xs-10">
-                    <input type="text" name="media_id" id="media_id" />
-                    <!--<button type="submit" name="">Add to queue</button>-->
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-1"></div>
-            </div>
-        </form>
-        <div class="search-info-container text-center" id="search-info-container">
-        </div>
-        <div class="search-container" id="search-container">
-        </div>
-    </div>
-</div>
-
-<script type="text/html" id="tplresult">
-    <div class="item pull-right text-center">
-        <iframe class="video w100" width="320" height="180" src="//www.youtube.com/embed/{{videoId}}" frameborder="0" allowfullscreen></iframe>
-        <br />
-        <button id="btn_add_to_queue" data-id="{{videoId}}">Add to queue</button>
-    </div>
-</script>
 
 <% include footer %>
