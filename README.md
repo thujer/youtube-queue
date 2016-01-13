@@ -1,4 +1,4 @@
-# Zizkostel website
+# Youtube Queue
 
 ## Installation
 * Run in project directory `npm install`, it happens that all nedded modules will be installed in node_modules directory
